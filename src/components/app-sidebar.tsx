@@ -43,7 +43,7 @@ const data = {
       items: [
         {
           title: "Daftar Anak",
-          url: "#",
+          url: "/data-anak/daftar-anak",
         },
         {
           title: "Rekam Medis Anak",

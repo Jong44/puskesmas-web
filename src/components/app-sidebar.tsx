@@ -29,11 +29,11 @@ const data = {
       items: [
         {
           title: "Daftar Ibu",
-          url: "#",
+          url: "/data-ibu/daftar-ibu",
         },
         {
           title: "Rekam Medis Ibu",
-          url: "#",
+          url: "/data-ibu/rekam-medis",
         },
       ],
     },
@@ -47,7 +47,7 @@ const data = {
         },
         {
           title: "Rekam Medis Anak",
-          url: "#",
+          url: "/data-anak/rekam-medis",
         },
       ],
     },
@@ -57,16 +57,16 @@ const data = {
       items: [
         {
           title: "Jadwal Imunisasi",
-          url: "#",
+          url: "/imunisasi/jadwal-imunisasi",
         },
         {
           title: "Riwayat Imunisasi",
-          url: "#",
+          url: "/imunisasi/riwayat-imunisasi",
           isActive: true,
         },
         {
           title: "Cakupan Vaksinasi",
-          url: "#",
+          url: "/imunisasi/cakupan-vaksinasi",
         },
       ],
     },

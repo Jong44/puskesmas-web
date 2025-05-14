@@ -3,6 +3,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { Button } from './ui/button';
+import { DynamicFormDialog } from './dynamic-dialog-add';
 
 interface TableColumn {
   header: string;
@@ -15,23 +17,41 @@ interface TableRowData {
 }
 
 interface DynamicTableProps {
+  title: string;
   columns: TableColumn[];
   data: TableRowData[];
   searchPlaceholder?: string;
+  onSubmitAdd?: () => void;
+  formFieldsAdd?: {
+    name: string;
+    label: string;
+    type: 'text' | 'number' | 'email' | 'password';
+    placeholder?: string;
+    required?: boolean;
+  }[];
 }
 
-const DynamicTable: React.FC<DynamicTableProps> = ({ columns, data, searchPlaceholder = "Search expenses..." }) => {
+const DynamicTable: React.FC<DynamicTableProps> = ({ columns, data, searchPlaceholder = "Search....", title, onSubmitAdd, formFieldsAdd }) => {
   return (
-     <Card className="shadow-lg rounded-xl border border-gray-200 overflow-hidden">
-      <CardHeader className="bg-gray-100 dark:bg-gray-800 border-b">
+     <Card className="rounded-xl border border-gray-200 overflow-hidden">
+      <CardHeader className="">
         <div className="flex justify-between items-center py-4 px-6">
-          <CardTitle className="text-lg font-semibold text-gray-800 dark:text-white">All Expenses</CardTitle>
-          <div className="relative w-64">
+          <CardTitle className="text-3xl font-semibold">{title}</CardTitle>
+          <div className="flex gap-2 items-center">
+            <div className="relative w-64">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={searchPlaceholder}
               className="pl-8 rounded-md shadow-sm"
             />
+          </div>
+          <DynamicFormDialog
+        formFields={formFieldsAdd || []}
+        onSubmit={onSubmitAdd || (() => {})}
+        triggerLabel="Tambah Data"
+        title="Form Tambah"
+        description="Isi data di bawah ini untuk menambahkan informasi."
+      />
           </div>
         </div>
       </CardHeader>

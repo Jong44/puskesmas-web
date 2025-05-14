@@ -1,5 +1,6 @@
 import * as React from "react"
-import { GalleryVerticalEnd, Minus, Plus } from "lucide-react"
+import { GalleryVerticalEnd, Link, Minus, Plus } from "lucide-react"
+import Image from "next/image"
 
 import { SearchForm } from "@/components/search-form"
 import {
@@ -96,10 +97,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <GalleryVerticalEnd className="size-4" />
+                 <Image src={'/logo.svg'} alt="Logo" width={16} height={16} />
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">Documentation</span>
+                  <span className="font-medium">PoskesApp</span>
                   <span className="">v1.0.0</span>
                 </div>
               </a>
@@ -111,8 +112,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton> 
-                Dashboard
+              <SidebarMenuButton asChild> 
+                <a href="/dashboard">
+                  Dashboard
+                </a>
               </SidebarMenuButton>
             </SidebarMenuItem>
             {data.navMain.map((item, index) => (

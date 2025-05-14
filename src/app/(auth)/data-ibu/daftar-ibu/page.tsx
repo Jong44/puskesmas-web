@@ -29,7 +29,7 @@ const data = [
 const formFields = [
   { name: "nik", label: "NIK", type: "text", placeholder: "Masukkan NIK", required: true },
   { name: "name", label: "Nama", type: "text", placeholder: "Masukkan Nama", required: true },
-  { name: "tanggal_lahir", label: "Tanggal Lahir", type: "text", placeholder: "Masukkan Tanggal Lahir", required: true },
+  { name: "tanggal_lahir", label: "Tanggal Lahir", type: "date", placeholder: "Masukkan Tanggal Lahir", required: true },
   { name: "noTelp", label: "No Telp", type: "text", placeholder: "Masukkan No Telp", required: true },
   { name: "alamat", label: "Alamat", type: "text", placeholder: "Masukkan Alamat", required: true },
   { name: "is_hamil", label: "Status Hamil", type: "text", placeholder: "Masukkan Status Hamil (Ya/Tidak)", required: true },
